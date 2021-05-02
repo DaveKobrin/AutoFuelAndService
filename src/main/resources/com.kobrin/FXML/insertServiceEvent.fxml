@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.InsServiceEventController">
+   <bottom>
+      <GridPane hgap="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="502.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="98.39998779296874" minWidth="7.20001220703125" percentWidth="25.0" prefWidth="98.39998779296874" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="68.0000244140625" percentWidth="25.0" prefWidth="108.00001220703126" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="252.0" minWidth="6.4000244140625" percentWidth="25.0" prefWidth="133.59997558593747" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="6.4000244140625" percentWidth="25.0" prefWidth="118.4000244140625" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#HomeButtonPressed" text="Home">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#FuelButtonPressed" text="Fuel Event" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#QueryButtonPressed" text="Query" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#VehicleButtonPressed" text="Vehicle" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+   <top>
+      <GridPane hgap="8.0" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea fx:id="queryTextArea" maxWidth="1.7976931348623157E308" prefRowCount="3" promptText="Enter query here the press Submit Query" wrapText="true" />
+          <Button mnemonicParsing="false" onAction="#submitQueryButtonPressed" text="Submit Query" GridPane.columnIndex="1" />
+            <TextField fx:id="filterTextField" GridPane.rowIndex="1" />
+          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#applyFilterButtonPressed" text="Apply Filter" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </top>
+   <!--<center>
+       <TableView fx:id="tableViewID" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+             
+   </center>-->
+</BorderPane>

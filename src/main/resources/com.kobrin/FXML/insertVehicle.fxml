@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.InsVehicleController">
+   <bottom>
+      <GridPane hgap="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="502.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="98.39998779296874" minWidth="7.20001220703125" percentWidth="25.0" prefWidth="98.39998779296874" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="68.0000244140625" percentWidth="25.0" prefWidth="108.00001220703126" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="252.0" minWidth="6.4000244140625" percentWidth="25.0" prefWidth="133.59997558593747" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="6.4000244140625" percentWidth="25.0" prefWidth="118.4000244140625" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#HomeButtonPressed" text="Home">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#FuelButtonPressed" text="Fuel Event" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ServiceButtonPressed" text="Service" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#QueryButtonPressed" text="Query" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+   <right>
+      <VBox prefHeight="317.0" prefWidth="129.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="textIDVIN" promptText="VIN" />
+            <TextField fx:id="textIDYear" promptText="Year" />
+            <TextField fx:id="textIDMaker" promptText="Maker" />
+            <TextField fx:id="textIDModel" promptText="Model" />
+            <TextField fx:id="textIDTrim" promptText="Trim Level" />
+            <TextField fx:id="textIDOdometer" promptText="Odometer" />
+            <TextField fx:id="textIDTireSize" promptText="Tire Size (215/65R16)" />
+            <TextField fx:id="textIDDisplayName" promptText="Display Name" />
+            <Button layoutX="14.0" layoutY="249.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LoadDataButtonPressed" text="Load Active">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="219.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ClearButtonPressed" text="Clear Entries">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#InsertButtonPressed" text="Insert Vehicle">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#UpdateButtonPressed" text="Update Vehicle">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="249.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#DeleteButtonPressed" text="Delete Vehicle">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="219.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LoadAllButtonPressed" text="Load All">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="371.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#RestoreButtonPressed" text="Restore Vehicle">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>

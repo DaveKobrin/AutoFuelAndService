@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.InsFuelEventController">
+   <bottom>
+      <GridPane hgap="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="502.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="98.39998779296874" minWidth="7.20001220703125" percentWidth="25.0" prefWidth="98.39998779296874" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="68.0000244140625" percentWidth="25.0" prefWidth="108.00001220703126" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="252.0" minWidth="6.4000244140625" percentWidth="25.0" prefWidth="133.59997558593747" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="6.4000244140625" percentWidth="25.0" prefWidth="118.4000244140625" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#HomeButtonPressed" text="Home">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#QueryButtonPressed" text="Query" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ServiceButtonPressed" text="Service" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#VehicleButtonPressed" text="Vehicle" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+   <right>
+      <VBox prefHeight="529.0" prefWidth="128.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="vehicleComboID" prefWidth="150.0" promptText="Choose Vehicle" />
+            <DatePicker fx:id="eventDatePickID" />
+            <TextField fx:id="odometerTextID" promptText="Current Mileage" />
+            <TextField fx:id="totalPriceTextID" layoutX="10.0" layoutY="61.0" promptText="Total Price" />
+            <TextField fx:id="numGallonsTextID" layoutX="10.0" layoutY="87.0" promptText="Number of Gallons" />
+            <CheckBox fx:id="filledTankCheckID" graphicTextGap="12.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Filled Tank">
+               <padding>
+                  <Insets bottom="8.0" left="12.0" right="8.0" top="8.0" />
+               </padding>
+            </CheckBox>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LoadButtonPressed" text="Load Data">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="156.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ClearButtonPressed" text="Clear Fields">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="181.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#InsertButtonPressed" text="Insert">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="207.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#UpdateButtonPressed" text="Update">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxWidth="1.7976931348623157E308" text="Overall Fuel Economy" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="32.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="overallEcoID" disable="true" editable="false" focusTraversable="false" promptText="Need More Data" />
+            <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="10.0" layoutY="289.0" maxWidth="1.7976931348623157E308" text="Since Last Fill" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="16.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="lastFillEcoID" disable="true" editable="false" focusTraversable="false" layoutX="10.0" layoutY="307.0" promptText="Need More Data" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
