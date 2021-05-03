@@ -1,2 +1,3 @@
+add user/password support for multiple users to same db
 add service reminders
 add print support for db output
