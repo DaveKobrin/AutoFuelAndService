@@ -34,7 +34,7 @@ public class DBUtility {
             Map.entry (Types.TIMESTAMP, java.sql.Timestamp.class)
     );
     
-    public static enum SQLSetType {
+    public enum SQLSetType {
         SET_ARRAY,
         SET_ASCIISTREAM,
         SET_BIGDECIMAL,
@@ -58,13 +58,12 @@ public class DBUtility {
         SET_SHORT,
         SET_STRING,
         SET_TIME,
-        SET_TIMESTAMP;
+        SET_TIMESTAMP
     }
     
     public static Class<?> typeSQLtoJava(int type){
-        
-        Class<?> result = (sql2java.getOrDefault(type, Object.class));
-        return result;
+
+        return (sql2java.getOrDefault(type, Object.class));
     }
     
     public static int typeJavatoSQL(Class<?> jclass) {
@@ -78,9 +77,9 @@ public class DBUtility {
     }
     
     private static int getKeyFromVal(Class<?> classname) {
-        for(Map.Entry entry : sql2java.entrySet()) {
+        for(Map.Entry<Integer, Class<?>> entry : sql2java.entrySet()) {
             if(classname.equals(entry.getValue()))
-                return (int)entry.getKey();
+                return entry.getKey();
         }
         return Types.OTHER;
     }
