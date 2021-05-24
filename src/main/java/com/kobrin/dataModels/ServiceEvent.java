@@ -3,7 +3,8 @@ package com.kobrin.dataModels;
 import com.kobrin.Setable;
 import javafx.beans.property.*;
 
-import java.util.Date;
+//import java.util.Date;
+import java.sql.Date;
 
 public class ServiceEvent implements Comparable<ServiceEvent>, Setable<ServiceEvent> {
 
@@ -14,7 +15,7 @@ public class ServiceEvent implements Comparable<ServiceEvent>, Setable<ServiceEv
     private final StringProperty vin = new SimpleStringProperty(this,"vin");
     private boolean valid;
 
-    ServiceEvent(int id, int odo, Date servDate, String loc, String v){
+    public ServiceEvent(int id, int odo, Date servDate, String loc, String v){
         this.eventId.set(id > 0 ? id : -1);
         this.odometer.set(odo >= 0 ? odo : -1);
         this.servDate.set(servDate);
@@ -23,11 +24,11 @@ public class ServiceEvent implements Comparable<ServiceEvent>, Setable<ServiceEv
         setValid();
     }
 
-    ServiceEvent(ServiceEvent sE){
+    public ServiceEvent(ServiceEvent sE){
         this(sE.getEventId(), sE.getOdometer(), sE.getServDate(), sE.getLocation(), sE.getVin());
     }
 
-    ServiceEvent(){
+    public ServiceEvent(){
         this(-1,-1,null, "INVALID","INVALID");
     }
 

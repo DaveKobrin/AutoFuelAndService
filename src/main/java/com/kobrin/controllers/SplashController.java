@@ -9,6 +9,9 @@ package com.kobrin.controllers;
 import com.kobrin.UIStateEngine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+
 /**
  *
  * @author David Kobrin
@@ -16,7 +19,16 @@ import javafx.fxml.FXML;
 
 public class SplashController {
     private UIStateEngine uiState;
-    
+    @FXML private HBox splashHBoxID;
+    @FXML private Button adminButtonID;
+
+    @FXML
+    void AdminButtonPressed(ActionEvent event) throws Exception {
+        uiState.setState(UIStateEngine.StateType.ADMIN);
+        uiState.DisplayUI();
+    }
+
+
     @FXML
     void FuelButtonPressed(ActionEvent event) throws Exception {
         uiState.setState(UIStateEngine.StateType.INS_FUEL_EVENT);
@@ -51,5 +63,12 @@ public class SplashController {
     @FXML
     void initialize() {
         uiState = UIStateEngine.getInstance();
+        if (uiState.isAdmin()){
+            adminButtonID.setVisible(true);
+            adminButtonID.setFocusTraversable(true);
+        } else {
+            adminButtonID.setVisible(false);
+            adminButtonID.setFocusTraversable(false);
+        }
     }
 }

@@ -72,19 +72,17 @@ public class InsFuelEventController  {
     private TableView<FuelEvent> fuelTableView;
     private TableColumn<FuelEvent, String> eventTimeCol;
     private TableColumn<FuelEvent, Integer> odometerCol;
-    private TableColumn<FuelEvent, Double> priceCol;
-    private TableColumn<FuelEvent, Double> gallonsCol;
+    private TableColumn<FuelEvent, Float> priceCol;
+    private TableColumn<FuelEvent, Float> gallonsCol;
     private TableColumn<FuelEvent, Boolean> filledCol;
-    private TableColumn<FuelEvent, Double> pricePerGalCol;
+    private TableColumn<FuelEvent, Float> pricePerGalCol;
 
     private static final String SQL_SELECT_USER_VEHICLES = "SELECT * FROM VEHICLE_TABLE WHERE IS_ACTIVE=TRUE AND USER_ID = ? ORDER BY VIN";
     private static final String SQL_SELECT_ALL_VEHICLES = "SELECT * FROM VEHICLE_TABLE WHERE IS_ACTIVE=TRUE ORDER BY VIN";
     private static final String SQL_SELECT_FUEL_EVENTS = "SELECT * FROM FUEL_EVENT WHERE VIN = ? ORDER BY EVENT_TIME";
     private static final String SQL_INSERT_FUEL_EVENT = "INSERT INTO FUEL_EVENT (VIN, EVENT_TIME, ODOMETER, TOTAL_PRICE, NUM_GAL, IS_FULL_TANK) VALUES (?, ?, ?, ?, ?, ?)";
-//    private static final String SQL_INSERT_VEHICLE_FUEL = "INSERT INTO VEHICLE_FUEL_TABLE (VIN, EVENT_TIME) VALUES (?, ?)";
     private static final String SQL_UPDATE_FUEL_EVENT = "UPDATE FUEL_EVENT SET ODOMETER = ?, TOTAL_PRICE = ?, NUM_GAL = ?, IS_FULL_TANK = ? WHERE EVENT_TIME = ? AND VIN = ?";
     private static final String SQL_DELETE_FUEL_EVENT = "DELETE FROM FUEL_EVENT WHERE EVENT_TIME = ? AND VIN = ?";
-//    private static final String SQL_DELETE_VEHICLE_FUEL = "DELETE FROM VEHICLE_FUEL_TABLE WHERE EVENT_TIME = ?";
 
     @FXML
     public void initialize() {

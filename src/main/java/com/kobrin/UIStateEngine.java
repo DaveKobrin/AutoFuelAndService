@@ -127,6 +127,14 @@ public class UIStateEngine {
                         stage.setScene(scene);
                         stage.show();
                         break;
+
+                    case ADMIN:
+                        root = FXMLLoader.load(getClass().getResource(ADMIN_FXML));
+                        scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                        break;
+
                 }                     
             }catch (IOException e){
                     e.printStackTrace();

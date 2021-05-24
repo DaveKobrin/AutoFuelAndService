@@ -11,7 +11,7 @@ public class ServiceItem implements Comparable<ServiceItem>, Setable<ServiceItem
     private final IntegerProperty servEventId = new SimpleIntegerProperty(this, "servEventId");
     private boolean valid;
 
-    ServiceItem(int id, String desc, float cost, int eventId){
+    public ServiceItem(int id, String desc, float cost, int eventId){
         this.servId.set(id > 0? id : -1);
         this.description.set(desc);
         this.cost.set(cost >= 0f? cost : -1f);
@@ -19,11 +19,11 @@ public class ServiceItem implements Comparable<ServiceItem>, Setable<ServiceItem
         setValid();
     }
 
-    ServiceItem(ServiceItem sI){
+    public ServiceItem(ServiceItem sI){
         this(sI.getServId(), sI.getDescription(), sI.getCost(), sI.getServEventId());
     }
 
-    ServiceItem(){
+    public ServiceItem(){
         this(-1, "INVALID",-1f,-1);
     }
 

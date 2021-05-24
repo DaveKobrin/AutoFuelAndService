@@ -2,15 +2,20 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.controllers.InsServiceEventController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.controllers.InsServiceEventController">
    <bottom>
       <GridPane hgap="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="502.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -50,26 +55,68 @@
       </GridPane>
    </bottom>
    <top>
-      <GridPane hgap="8.0" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+      <GridPane hgap="8.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="NEVER" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="144.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="635.0" minWidth="10.0" prefWidth="602.0" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="135.0" minWidth="111.0" prefWidth="131.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextArea fx:id="queryTextArea" maxWidth="1.7976931348623157E308" prefRowCount="3" promptText="Enter query here the press Submit Query" wrapText="true" />
-          <Button mnemonicParsing="false" onAction="#submitQueryButtonPressed" text="Submit Query" GridPane.columnIndex="1" />
-            <TextField fx:id="filterTextField" GridPane.rowIndex="1" />
-          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#applyFilterButtonPressed" text="Apply Filter" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#newServEventButtonPressed" prefHeight="25.0" prefWidth="114.0" text="New Service Event" />
+            <ComboBox fx:id="vehicleComboID" prefWidth="150.0" promptText="Choose Vehicle" GridPane.columnIndex="2" />
+            <GridPane GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.0" minWidth="10.0" prefWidth="179.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="149.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="307.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <DatePicker fx:id="eventDatePickID" promptText="Service Date" />
+                  <TextField fx:id="odometerTextID" promptText="Odometer" GridPane.columnIndex="1" />
+                  <TextField fx:id="locationTextID" prefHeight="25.0" prefWidth="283.0" promptText="Service Location" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addServiceItemPressed" text="Add Service Item" GridPane.rowIndex="1" />
+            <TextField fx:id="servItemDescTextID" promptText="Service Item Performed" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="servItemCostTextID" promptText="Item Cost" GridPane.columnIndex="2" GridPane.rowIndex="1" />
          </children>
          <BorderPane.margin>
             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
          </BorderPane.margin>
       </GridPane>
    </top>
+   <center>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="serviceEventPaneID" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="200.0" prefWidth="150.0" />
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <Pane fx:id="serviceItemPaneID" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="445.0" prefWidth="700.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Pane>
+                  <HBox prefHeight="25.0" prefWidth="700.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Total Cost" />
+                        <TextField fx:id="totalCostTextID" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="4.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
    <!--<center>
        <TableView fx:id="tableViewID" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
              

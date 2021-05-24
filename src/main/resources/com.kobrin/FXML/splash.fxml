@@ -7,21 +7,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.controllers.SplashController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kobrin.controllers.SplashController">
    <bottom>
-      <HBox maxWidth="1.7976931348623157E308" spacing="8.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="splashHBoxID" maxWidth="675.0" prefHeight="55.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#FuelButtonPressed" prefWidth="140.0" text="Fuel Event">
+            <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#FuelButtonPressed" text="Fuel Event">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ServiceButtonPressed" prefWidth="140.0" text="Service Event">
+            <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ServiceButtonPressed" text="Service Event">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="121.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#VehicleButtonPressed" prefWidth="140.0" text="Vehicle">
+            <Button layoutX="121.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#VehicleButtonPressed" text="Vehicle">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -32,6 +32,11 @@
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#LogoutButtonPressed" text="Logout">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="adminButtonID" focusTraversable="false" layoutX="503.0" layoutY="18.0" mnemonicParsing="false" onAction="#AdminButtonPressed" text="Admin" visible="false">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

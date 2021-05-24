@@ -110,7 +110,7 @@ public class InsVehicleController  {
         vehicleData.clear();
         vehicleData.addAll(dbQueries.DBSelect(sql,data.toArray(),v));
 
-        vehicleTableView = new TableView<>();
+        vehicleTableView.getColumns().clear();
         
         nameCol = new TableColumn<>("Display Name");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("displayName"));

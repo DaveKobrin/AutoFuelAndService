@@ -126,4 +126,8 @@ public class DBUtility {
             }
         return SQLSetType.SET_OBJECT;
     }
+
+    public static long millisPerDay(){
+        return 1000 * 60 * 60 * 24;
+    }
 }
