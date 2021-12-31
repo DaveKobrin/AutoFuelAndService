@@ -21,7 +21,7 @@ import java.util.HashMap;
  * @author shdwk
  */
 public class DBQueries {
-    private static final String DB = "//localhost:1527/FuelEcoService";
+    private static final String DB = "//192.168.1.166:1527/FuelEcoService";
     private static final String URL = "jdbc:derby:" + DB;
     private static final String USERNAME = "DMK";
     private static final String PASSWORD = "pDaMsKs";

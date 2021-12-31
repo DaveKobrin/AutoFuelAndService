@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
 group 'com.kobrin'
@@ -12,14 +12,14 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.apache.derby', name: 'derby', version: '10.15.2.0'
-    runtime group: 'org.apache.derby', name: 'derbyclient', version: '10.15.2.0'
+    implementation group: 'org.apache.derby', name: 'derby', version: '10.15.2.0'
+    implementation group: 'org.apache.derby', name: 'derbyclient', version: '10.15.2.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
 javafx {
-    version = "16"
+    //version = "17.0.1"
     modules = [ 'javafx.controls', 'javafx.swing', 'javafx.fxml' ]
 }
 
